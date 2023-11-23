@@ -218,9 +218,9 @@ const formattedDate = new Intl.DateTimeFormat('es-PE', options).format(currentDa
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error(`Error al enviar el correo electrónico: ${data.email}`, error);
+      console.error(`Error al enviar el correo electrónico: `, error);
     } else {
-      console.log(`Correo electrónico enviado: ${info.response}`);
+      console.log(`Correo electrónico enviado: ${data.email}`);
     }
   });
 
