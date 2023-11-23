@@ -205,13 +205,13 @@ const formattedDate = new Intl.DateTimeFormat('es-PE', options).format(currentDa
 
 
   const mailOptions = {
-    from: "ventas@donquezo.com",
+    from: process.env.EMAIL,
     to: data.email,
     subject: 'Confirmación de compra',
     html: emailBody,
   };
    const mailOptions2 = {
-    from: "ventas@donquezo.com",
+    from: process.env.EMAIL,
     to: "donquezo.1@gmail.com",
     subject: 'Confirmación de compra',
     html: emailBody,
