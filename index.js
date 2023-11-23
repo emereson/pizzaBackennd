@@ -1,12 +1,12 @@
-import express from "express";
-import morgan from "morgan";
-import cors from 'cors';
-import paymentRoutes from './payment.routes.js';
-import dotenv from 'dotenv';
+const express = require ("express")
+const morgan = require ("morgan")
+const cors = require ('cors')
+const paymentRoutes = require ('./payment.routes.js')
+require('dotenv').config();
+
 
 const app = express();
 
-dotenv.config();
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());

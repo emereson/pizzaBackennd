@@ -1,5 +1,5 @@
-import mercadopage from "mercadopago";
-import nodemailer from "nodemailer";
+const mercadopage = require( "mercadopago")
+const nodemailer  = require("nodemailer")
 
 let temporaryFormData = null;
 
@@ -236,7 +236,7 @@ transporter.sendMail(mailOptions2, (error2, info2) => {
 
 
 
-export const createOrder = async (req, res) => {
+exports.createOrder = async (req, res) => {
   mercadopage.configure({
     access_token: process.env.ACCESS_TOKEN,
   });
@@ -280,7 +280,7 @@ export const createOrder = async (req, res) => {
   }
 };
 
-export const createOrder2 = async (req, res) => {
+exports.createOrder2 = async (req, res) => {
   const listItems = req.body.itemsArray;
   const totalpayCard = req.body.totalValue;
   const formData = req.body.formData;
@@ -304,7 +304,7 @@ export const createOrder2 = async (req, res) => {
   }
 };
 
-export const receiveWebhook = async (req, res) => {
+exports.receiveWebhook = async (req, res) => {
   try {
     const payment = req.query;
     if (payment.type === "payment") {
